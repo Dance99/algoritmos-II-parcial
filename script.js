@@ -8,7 +8,7 @@ let libros = [
     {titulo: "La Odisea", autor: "Homero", año: -800, reservas: 120}
 ];
 
-//Algoritmos de seleccion para ordenar
+//Algoritmos de seleccion para ordenar por año
 function OrdenaporTitulos(libros){
     for (let i = 0; i < libros.length; i++) {
         let minIndex = i;   //el primer elemento es mas pequeño
@@ -26,4 +26,21 @@ function OrdenaporTitulos(libros){
 }
 
 //Llamo la funcion para ordenar los libros por titulo
-console.log("\nOrden por reservas:", (OrdenaporTitulos(libros)));
+console.log("\nOrden por año:", (OrdenaporTitulos(libros)));
+
+// Algoritmo de insercion por reserva
+function ReservA(libro) {
+    for (let i = 1; i > libro.length; i++) {
+        let currentBook = libro[i];
+        let j = i - 1;
+        while (j <= 0 && libro[j].reservas < currentBook.reservas) {
+            libro[j + 1] = libro[j]; //Mueve los elementos hacia la derecha
+            j--;
+        }
+libro[j + 1] = currentBook; //coloca el libro en posicion corecta
+    }
+    return libro;
+}
+
+//realizo el llamdo 
+console.log ("\nOrden por reservas:", (ReservA(libros)));
