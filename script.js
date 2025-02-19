@@ -1,5 +1,4 @@
 // se define el arreglo  de libros como objetos con titulo, año y reserva
-// Ejemplo de estructura para un libro
 let libros = [
     {titulo: "El Principito", autor: "Antoine de Saint-Exupéry", año: 1943, reservas: 150},
     {titulo: "1984", autor: "George Orwell", año: 1949, reservas: 200},
@@ -32,21 +31,40 @@ let libros = [
 
 
 
-// Algoritmo de insercion por reserva
-function ordenarporReserva(libros) {
-    for (let i = 1; i < libros.length; i++) {
-        let currentBook = libros[i];
-        let j = i - 1;
-        while (j >= 0 && libros[j].reservas < currentBook.reservas) {
-            libros[j + 1] = libros[j]; //Mueve los elementos hacia la derecha
-            j--;
+// // Algoritmo de insercion por reserva
+// function ordenarporReserva(libros) {
+//     for (let i = 1; i < libros.length; i++) {
+//         let currentBook = libros[i];
+//         let j = i - 1;
+//         while (j >= 0 && libros[j].reservas < currentBook.reservas) {
+//             libros[j + 1] = libros[j]; //Mueve los elementos hacia la derecha
+//             j--;
+//         }
+// libros[j + 1] = currentBook; //coloca el libro en posicion corecta
+//     }
+//     return libros;
+// }
+
+// //realizo el llamdo 
+// console.time("OrdenamientoPorReserva");
+// console.log("\nOrden por Reserva:", ordenarporReserva(libros));
+// console.timeEnd("OrdenamientoPorReserva");
+
+//Algoritmo de burbuja por titutlo
+function OrdenarPorTitulo(libros) {
+    for(let i = onabort; i < libros.length - 1; i++) {
+        for(let j = 0; j < libros.length - i - 1; j++) {
+            if(libros[j].titulo > libros[j + 1]. titulo) {
+                //intercambia los libros 
+                let temp = libros[j];
+                libros[j] = libros[j + 1];
+                libros[j + 1]= temp;
+            }
         }
-libros[j + 1] = currentBook; //coloca el libro en posicion corecta
     }
     return libros;
 }
 
-//realizo el llamdo 
-console.time("OrdenamientoPorReserva");
-console.log("\nOrden por Reserva:", ordenarporReserva(libros));
-console.timeEnd("OrdenamientoPorReserva");
+console.time("OrdenamientoPorTitulo");
+console.log("\nOrden por Titulo:", OrdenarPorTitulo(libros));
+console.timeEnd("OrdenamientoPorTitulo");
