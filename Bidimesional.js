@@ -1,4 +1,4 @@
-// se define el arreglo  de libros como objetos con titulo, año y reserva
+// se define el arreglo de libros como objetos con titulo, año y reserva
 let libros = [
     [{titulo: "El Principito", autor: "Antoine de Saint-Exupéry", año: 1943, reservas: 150},],
     [{titulo: "1984", autor: "George Orwell", año: 1949, reservas: 200},],
@@ -6,6 +6,7 @@ let libros = [
     [{titulo: "Don Quijote de la Mancha", autor: "Miguel de Cervantes", año: 1605, reservas: 50},],
     [{titulo: "La Odisea", autor: "Homero", año: -800, reservas: 120}],
 ];
+
 
 //Algoritmo de burbuja por titutlo
 function OrdenarPorTitulo(libros) {
