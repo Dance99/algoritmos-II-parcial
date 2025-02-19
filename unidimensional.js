@@ -31,7 +31,7 @@ let libros = [
 
 
 
-// // Algoritmo de insercion por reserva
+// Algoritmo de insercion por reserva
 // function ordenarporReserva(libros) {
 //     for (let i = 1; i < libros.length; i++) {
 //         let currentBook = libros[i];
