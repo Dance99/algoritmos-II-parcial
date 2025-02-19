@@ -51,20 +51,20 @@ let libros = [
 // console.timeEnd("OrdenamientoPorReserva");
 
 //Algoritmo de burbuja por titutlo
-function OrdenarPorTitulo(libros) {
-    for(let i = onabort; i < libros.length - 1; i++) {
-        for(let j = 0; j < libros.length - i - 1; j++) {
-            if(libros[j].titulo > libros[j + 1]. titulo) {
-                //intercambia los libros 
-                let temp = libros[j];
-                libros[j] = libros[j + 1];
-                libros[j + 1]= temp;
-            }
-        }
-    }
-    return libros;
-}
+// function OrdenarPorTitulo(libros) {
+//     for(let i = onabort; i < libros.length - 1; i++) {
+//         for(let j = 0; j < libros.length - i - 1; j++) {
+//             if(libros[j].titulo > libros[j + 1]. titulo) {
+//                 //intercambia los libros 
+//                 let temp = libros[j];
+//                 libros[j] = libros[j + 1];
+//                 libros[j + 1]= temp;
+//             }
+//         }
+//     }
+//     return libros;
+// }
 
-console.time("OrdenamientoPorTitulo");
-console.log("\nOrden por Titulo:", OrdenarPorTitulo(libros));
-console.timeEnd("OrdenamientoPorTitulo");
+// console.time("OrdenamientoPorTitulo");
+// console.log("\nOrden por Titulo:", OrdenarPorTitulo(libros));
+// console.timeEnd("OrdenamientoPorTitulo");
