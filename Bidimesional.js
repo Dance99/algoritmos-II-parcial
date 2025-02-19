@@ -28,23 +28,43 @@ let libros = [
 // console.timeEnd("OrdenamientoPorTitulo");
 
 //Algoritmos de seleccion para ordenar por año
-function ordenarPorAño(libros) {
-    let n = libros.length;
-    for (let i = 0; i < n - 1; i++) {
-        let minIndex = i;
-        for (let j = i + 1; j < n; j++) {
-            if (libros[j][0].año < libros[minIndex][0].año) {
-                minIndex = j;
-            }
+// function ordenarPorAño(libros) {
+//     let n = libros.length;
+//     for (let i = 0; i < n - 1; i++) {
+//         let minIndex = i;
+//         for (let j = i + 1; j < n; j++) {
+//             if (libros[j][0].año < libros[minIndex][0].año) {
+//                 minIndex = j;
+//             }
+//         }
+//         // Intercambio de elementos
+//         if (minIndex !== i) {
+//             [libros[i], libros[minIndex]] = [libros[minIndex], libros[i]];
+//         }
+//     }
+//     return libros;
+// }
+// //Llamo la funcion para ordenar los libros por titulo
+// console.time("OrdenamientoPorAño");
+// console.log("\nOrden por año:", (ordenarPorAño(libros)));
+// console.timeEnd("OrdenamientoPorAño");
+
+// Algoritmo de insercion por reserva
+function ordenarPorReserva(libros) {
+    for (let i = 1; i < libros.length; i++) {
+        let currentBook = libros[i][0]; // Accede al objeto dentro del array bidimensional
+        let j = i - 1;
+
+        while (j >= 0 && libros[j][0].reservas < currentBook.reservas) {
+            libros[j + 1] = libros[j]; // Mueve los elementos hacia la derecha
+            j--;
         }
-        // Intercambio de elementos
-        if (minIndex !== i) {
-            [libros[i], libros[minIndex]] = [libros[minIndex], libros[i]];
-        }
+        
+        libros[j + 1] = [currentBook]; // Coloca el libro en la posición correcta, manteniendo la estructura bidimensional
     }
     return libros;
 }
-//Llamo la funcion para ordenar los libros por titulo
-console.time("OrdenamientoPorAño");
-console.log("\nOrden por año:", (ordenarPorAño(libros)));
-console.timeEnd("OrdenamientoPorAño");
+//realizo el llamdo 
+console.time("OrdenamientoPorReserva");
+console.log("\nOrden por Reserva:", ordenarPorReserva(libros));
+console.timeEnd("OrdenamientoPorReserva");
